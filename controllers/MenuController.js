@@ -9,6 +9,7 @@ module.exports = class MenuController {
         message: "Please choose from an option below:",
         choices: [
           "Add new contact",
+          "Get current time",
           "Exit"
         ]
       }
@@ -27,6 +28,11 @@ module.exports = class MenuController {
     process.exit();
   }
 
+  getTime() {
+    var time = new Date();
+    console.log(time.getHours()+":"+time.getMinutes()+":"+time.getSeconds());
+  }
+
   main() {
     console.log('Welcome to AddressBloc!');
     inquirer.prompt(this.mainMenuQuestions).then( response => {
@@ -36,6 +42,10 @@ module.exports = class MenuController {
           break;
         case "Exit":
           this.exit();
+          break;
+        case "Get current time":
+          this.getTime();
+          break;
         default:
           console.log("Invalid input");
           this.main();
