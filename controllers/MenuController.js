@@ -23,6 +23,10 @@ module.exports = class MenuController {
     this.main();
   }
 
+  clear() {
+    console.log('\x1Bc');
+  }
+
   exit() {
     console.log("Thanks for using AddressBloc!");
     process.exit();
@@ -59,7 +63,8 @@ module.exports = class MenuController {
     });
   }
 
-  clear() {
-    console.log('\x1Bc');
+  remindMe() {
+      return "Learning is a life-long pursuit";
   }
+
 }
